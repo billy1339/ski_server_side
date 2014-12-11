@@ -1,4 +1,5 @@
-class MountiansController < ApplicationController
+class MountainsController < ApplicationController
+
    def index
     @mountains = Mountain.all
     render json: @mountains
@@ -54,4 +55,5 @@ class MountiansController < ApplicationController
   def find_specific_mountain
     Mountain.find(params[:id])
   end
+
 end
