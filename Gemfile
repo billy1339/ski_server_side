@@ -23,6 +23,9 @@ gem 'pry-byebug'
 gem 'rspec-rails'
 gem 'rspec'
 
+gem 'newrelic_rpm' # if you add Unicorn you will need the preload_app true directive in your unicorn.rb.
+
+
 
 
 
