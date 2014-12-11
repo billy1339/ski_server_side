@@ -20,6 +20,10 @@ gem 'pry-rails'
 
 gem 'pry-byebug'
 
+gem 'arel', '6.0.0.beta2'
+
+gem 'rspec'
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'

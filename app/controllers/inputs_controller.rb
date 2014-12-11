@@ -1,0 +1,2 @@
+class InputsController < ApplicationController
+end
