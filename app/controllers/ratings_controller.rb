@@ -48,7 +48,7 @@ class RatingsController < ApplicationController
   private
 
   def allowed_params
-    params.require(:rating).permit(:body, :user_id, :input_id)
+    params.require(:rating).permit(:user_id, :input_id)
   end
 
   def find_specific_rating

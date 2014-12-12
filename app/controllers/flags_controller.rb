@@ -48,7 +48,7 @@ class FlagsController < ApplicationController
   private
 
   def allowed_params
-    params.require(:flag).permit(:body, :user_id, :input_id)
+    params.require(:flag).permit(:user_id, :input_id)
   end
 
   def find_specific_flag

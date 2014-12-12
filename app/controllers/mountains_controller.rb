@@ -49,7 +49,7 @@ class MountainsController < ApplicationController
   private
 
   def allowed_params
-    params.require(:mountain).permit(:body, :user_id, :input_id)
+    params.require(:mountain).permit(:name, :longitude, :latitude)
   end
 
   def find_specific_mountain

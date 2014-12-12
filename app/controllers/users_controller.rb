@@ -49,7 +49,7 @@ class UsersController < ApplicationController
   private
 
   def allowed_params
-    params.require(:user).permit(:body, :user_id, :input_id)
+    params.require(:user).permit(:username, :email, :password_digest, :token)
   end
 
   def find_specific_user
