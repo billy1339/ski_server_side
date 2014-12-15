@@ -2,14 +2,14 @@ class MountainsController < ApplicationController
 
    def index
     @mountains = Mountain.all
-    render json: @mountains
+    render json: @mountains, :include => [:inputs => {:include => [:descriptions, :flags, :ratings]}]
   end
 
   def show
     @mountain = find_specific_mountain
 
     if @mountain
-      render json: @mountain, status: :created, location: @mountain
+      render json: @mountain, :include => [:inputs => {:include => [:descriptions, :flags, :ratings]}], status: :created, location: @mountain
     else
       render json: @mountain.errors, status: :unprocessable_entity
     end
@@ -39,7 +39,7 @@ class MountainsController < ApplicationController
     @mountain = find_specific_mountain
 
     if @mountain.destroy
-      render json: @mountain  #, status: :created, location: @mountain
+      render json: @mountain, status: :created, location: @mountain
     else
       render json: @mountain.errors, status: :unprocessable_entity
     end

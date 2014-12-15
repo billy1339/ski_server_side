@@ -1,7 +1,7 @@
 class InputsController < ApplicationController
    def index
     @inputs = Input.all
-    render json: @inputs
+    render json: @inputs, :include => [:descriptions, :ratings, :flags]
   end
 
   def show

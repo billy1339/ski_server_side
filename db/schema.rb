@@ -38,7 +38,9 @@ ActiveRecord::Schema.define(version: 20141210224551) do
   add_index "flags", ["user_id"], name: "index_flags_on_user_id", using: :btree
 
   create_table "inputs", force: true do |t|
-    t.text     "type"
+    t.text     "category"
+    t.float    "latitude"
+    t.float    "longitude"
     t.integer  "user_id"
     t.integer  "mountain_id"
     t.datetime "created_at"
