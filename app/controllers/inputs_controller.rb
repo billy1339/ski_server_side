@@ -48,7 +48,7 @@ class InputsController < ApplicationController
   private
 
   def allowed_params
-    params.require(:input).permit(:type, :user_id, :mountain_id)
+    params.require(:input).permit(:category, :longitude, :latitude, :user_id, :mountain_id)
   end
 
   def find_specific_input
