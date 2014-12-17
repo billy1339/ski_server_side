@@ -37,12 +37,21 @@ class UsersController < ApplicationController
 
   def destroy
     @user = find_specific_user
+      destroyed_user = @user.as_json # or try .to_json
 
     if @user.destroy
-      render json: @user, status: :created, location: @user
+       render json: destroyed_user, status: :created, location: destroyed_user
     else
       render json: @user.errors, status: :unprocessable_entity
     end
+
+    # @user = find_specific_user
+
+    # if @user.destroy
+    #   render json: @user, status: :created, location: @user
+    # else
+    #   render json: @user.errors, status: :unprocessable_entity
+    # end
   end
 
 

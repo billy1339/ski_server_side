@@ -36,12 +36,21 @@ class FlagsController < ApplicationController
 
   def destroy
     @flag = find_specific_flag
+      destroyed_flag = @flag.as_json # or try .to_json
 
     if @flag.destroy
-      render json: @flag, status: :created, location: @flag
+       render json: destroyed_flag, status: :created, location: destroyed_flag
     else
       render json: @flag.errors, status: :unprocessable_entity
     end
+
+    # @flag = find_specific_flag
+
+    # if @flag.destroy
+    #   render json: @flag, status: :created, location: @flag
+    # else
+    #   render json: @flag.errors, status: :unprocessable_entity
+    # end
   end
 
 

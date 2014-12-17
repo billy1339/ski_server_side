@@ -36,12 +36,22 @@ class RatingsController < ApplicationController
 
   def destroy
     @rating = find_specific_rating
+      destroyed_rating = @rating.as_json # or try .to_json
 
     if @rating.destroy
-      render json: @rating, status: :created, location: @rating
+       render json: destroyed_rating, status: :created, location: destroyed_rating
     else
       render json: @rating.errors, status: :unprocessable_entity
     end
+
+
+    # @rating = find_specific_rating
+
+    # if @rating.destroy
+    #   render json: @rating, status: :created, location: @rating
+    # else
+    #   render json: @rating.errors, status: :unprocessable_entity
+    # end
   end
 
 

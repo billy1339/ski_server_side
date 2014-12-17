@@ -37,12 +37,21 @@ class DescriptionsController < ApplicationController
 
   def destroy
     @description = find_specific_description
+      destroyed_description = @description.as_json # or try .to_json
 
     if @description.destroy
-      render json: @description, status: :created, location: @description
+       render json: destroyed_description, status: :created, location: destroyed_description
     else
       render json: @description.errors, status: :unprocessable_entity
     end
+
+    # @description = find_specific_description
+
+    # if @description.destroy
+    #   render json: @description, status: :created, location: @description
+    # else
+    #   render json: @description.errors, status: :unprocessable_entity
+    # end
   end
 
 

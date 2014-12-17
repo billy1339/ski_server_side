@@ -35,13 +35,24 @@ class InputsController < ApplicationController
   end
 
   def destroy
-    @input = find_specific_input
+      @input = find_specific_input
+      destroyed_input = @input.as_json # or try .to_json
 
-    if @input.destroy
-      render json: @input, status: :created, location: @input
-    else
-      render json: @input.errors, status: :unprocessable_entity
-    end
+      if @input.destroy
+         render json: destroyed_input, status: :created, location: destroyed_input
+      else
+        render json: @input.errors, status: :unprocessable_entity
+      end
+
+
+
+    # @input = find_specific_input
+    # # @input.destroy
+    # if @input.destroy
+    #   render json: @input, status: :created, location: @input
+    # else
+    #   render json: @input.errors, status: :unprocessable_entity
+    # end
   end
 
 

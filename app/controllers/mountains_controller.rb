@@ -37,12 +37,21 @@ class MountainsController < ApplicationController
 
   def destroy
     @mountain = find_specific_mountain
+      destroyed_mountain = @mountain.as_json # or try .to_json
 
     if @mountain.destroy
-      render json: @mountain, status: :created, location: @mountain
+       render json: destroyed_mountain, status: :created, location: destroyed_mountain
     else
       render json: @mountain.errors, status: :unprocessable_entity
     end
+
+    # @mountain = find_specific_mountain
+
+    # if @mountain.destroy
+    #   render json: @mountain, status: :created, location: @mountain
+    # else
+    #   render json: @mountain.errors, status: :unprocessable_entity
+    # end
   end
 
 
