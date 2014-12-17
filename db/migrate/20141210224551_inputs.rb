@@ -4,6 +4,7 @@ class Inputs < ActiveRecord::Migration
       t.text :category
       t.float :latitude
       t.float :longitude
+      t.text :url
       t.belongs_to :user, index: true
       t.belongs_to :mountain, index: true
       t.timestamps

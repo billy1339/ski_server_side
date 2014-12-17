@@ -1,3 +1,3 @@
 class Mountain < ActiveRecord::Base
-  has_many :inputs
+  has_many :inputs, dependent: :destroy
 end

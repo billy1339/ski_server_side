@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20141210224551) do
     t.text     "category"
     t.float    "latitude"
     t.float    "longitude"
+    t.text     "url"
     t.integer  "user_id"
     t.integer  "mountain_id"
     t.datetime "created_at"
