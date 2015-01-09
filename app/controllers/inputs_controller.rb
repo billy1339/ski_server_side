@@ -44,15 +44,6 @@ class InputsController < ApplicationController
         render json: @input.errors, status: :unprocessable_entity
       end
 
-
-
-    # @input = find_specific_input
-    # # @input.destroy
-    # if @input.destroy
-    #   render json: @input, status: :created, location: @input
-    # else
-    #   render json: @input.errors, status: :unprocessable_entity
-    # end
   end
 
 

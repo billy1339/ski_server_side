@@ -45,13 +45,6 @@ class UsersController < ApplicationController
       render json: @user.errors, status: :unprocessable_entity
     end
 
-    # @user = find_specific_user
-
-    # if @user.destroy
-    #   render json: @user, status: :created, location: @user
-    # else
-    #   render json: @user.errors, status: :unprocessable_entity
-    # end
   end
 
 

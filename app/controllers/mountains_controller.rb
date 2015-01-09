@@ -45,13 +45,6 @@ class MountainsController < ApplicationController
       render json: @mountain.errors, status: :unprocessable_entity
     end
 
-    # @mountain = find_specific_mountain
-
-    # if @mountain.destroy
-    #   render json: @mountain, status: :created, location: @mountain
-    # else
-    #   render json: @mountain.errors, status: :unprocessable_entity
-    # end
   end
 
 

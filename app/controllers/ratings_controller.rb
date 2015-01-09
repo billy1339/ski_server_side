@@ -44,14 +44,6 @@ class RatingsController < ApplicationController
       render json: @rating.errors, status: :unprocessable_entity
     end
 
-
-    # @rating = find_specific_rating
-
-    # if @rating.destroy
-    #   render json: @rating, status: :created, location: @rating
-    # else
-    #   render json: @rating.errors, status: :unprocessable_entity
-    # end
   end
 
 

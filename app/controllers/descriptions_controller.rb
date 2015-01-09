@@ -45,13 +45,6 @@ class DescriptionsController < ApplicationController
       render json: @description.errors, status: :unprocessable_entity
     end
 
-    # @description = find_specific_description
-
-    # if @description.destroy
-    #   render json: @description, status: :created, location: @description
-    # else
-    #   render json: @description.errors, status: :unprocessable_entity
-    # end
   end
 
 

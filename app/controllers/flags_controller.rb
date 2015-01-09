@@ -44,13 +44,6 @@ class FlagsController < ApplicationController
       render json: @flag.errors, status: :unprocessable_entity
     end
 
-    # @flag = find_specific_flag
-
-    # if @flag.destroy
-    #   render json: @flag, status: :created, location: @flag
-    # else
-    #   render json: @flag.errors, status: :unprocessable_entity
-    # end
   end
 
 
