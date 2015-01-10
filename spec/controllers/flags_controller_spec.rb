@@ -19,7 +19,31 @@ RSpec.describe FlagsController do
       get :index
       expect(response).to be_success
       json = json(response.body)
-      expect(json.length).to be @flags.length
+      expect(json.length).to be Flag.all.length
     end
   end
+
+   describe "#show" do
+    it "should find back one Flag" do
+      flag = Flag.find(@flag.id)
+      expect(flag.id).to eq @first.id
+    end
+  end
+
+   describe "#flag" do
+    it "should create a new flag" do
+      new_flag = Flag.create({})
+      expect(Flag.all.length).to eq 3
+    end
+  end
+
+  describe "#destroy" do
+    it "should delete a flag" do
+      flag = Flag.find(@first.id)
+      flag.destroy
+      expect(Flag.all.length).to eq 1
+    end
+  end
+
+
 end

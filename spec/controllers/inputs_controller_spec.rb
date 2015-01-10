@@ -31,4 +31,33 @@ RSpec.describe InputsController do
     end
   end
 
+  describe "#show" do
+    it "should find back one input" do
+      input = Input.find(@input.id)
+      expect(input.longitude).to eq @first.longitude
+    end
+  end
+
+   describe "#create" do
+    it "should create a new input" do
+      new_input = Input.create({
+      category: "chairlift",
+      latitude: 44.23523,
+      longitude: 13.5232,
+      url: "http://www.pictursadges.com"
+      })
+      expect(Input.all.length).to eq 3
+    end
+  end
+
+  describe "#destroy" do
+    it "should delete a input" do
+      input = Input.find(@first.id)
+      input.destroy
+      expect(Input.all.length).to eq 1
+    end
+  end
+
+
+
 end
